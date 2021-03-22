@@ -14,7 +14,7 @@ public class Fecha {
     }
 
     public String Fecha(int dia, int mes, int anio) {
-        String resultado = validarFecha(dia, mes, anio, 0, 0, 0);
+        String resultado = validarFecha(dia, (mes-1), anio, 0, 0, 0);
         if (resultado == "") {
             this.dia = dia;
             this.mes = mes;
@@ -25,7 +25,7 @@ public class Fecha {
     }
 
     public String Fecha(int dia, int mes, int anio, int horas, int minutos, int segundos) {
-        String resultado = validarFecha(dia, mes, anio, horas, minutos, segundos);
+        String resultado = validarFecha(dia, (mes-1), anio, horas, minutos, segundos);
         if (resultado == "") {
             this.dia = dia;
             this.mes = mes;
