@@ -13,18 +13,16 @@ public class Fecha {
     public Fecha() {
     }
 
-    public String Fecha(int dia, int mes, int anio) {
+    public Fecha(int dia, int mes, int anio) {
         String resultado = validarFecha(dia, (mes-1), anio, 0, 0, 0);
         if (resultado == "") {
             this.dia = dia;
             this.mes = mes;
             this.anio = anio;
-            resultado = "Fecha creada con Exito";
         }
-        return resultado;
     }
 
-    public String Fecha(int dia, int mes, int anio, int horas, int minutos, int segundos) {
+    public Fecha(int dia, int mes, int anio, int horas, int minutos, int segundos) {
         String resultado = validarFecha(dia, (mes-1), anio, horas, minutos, segundos);
         if (resultado == "") {
             this.dia = dia;
@@ -33,9 +31,7 @@ public class Fecha {
             this.horas = horas;
             this.minutos = minutos;
             this.segundos = segundos;
-            resultado = "Fecha creada con Exito";
         }
-        return resultado;
     }
 
     public int getDia() {
@@ -43,7 +39,10 @@ public class Fecha {
     }
 
     public void setDia(int dia) {
-        this.dia = dia;
+        String resultado = validarFecha(dia, (this.mes-1), this.anio, this.horas, this.minutos, this.segundos);
+        if (resultado == "") {
+            this.dia = dia;
+        }
     }
 
     public int getMes() {
@@ -51,7 +50,10 @@ public class Fecha {
     }
 
     public void setMes(int mes) {
-        this.mes = mes;
+        String resultado = validarFecha(this.dia, (mes-1), this.anio, this.horas, this.minutos, this.segundos);
+        if (resultado == "") {
+            this.mes = mes;
+        }
     }
 
     public int getAnio() {
@@ -59,7 +61,10 @@ public class Fecha {
     }
 
     public void setAnio(int anio) {
-        this.anio = anio;
+        String resultado = validarFecha(this.dia, (this.mes-1), anio, this.horas, this.minutos, this.segundos);
+        if (resultado == "") {
+            this.anio = anio;
+        }
     }
 
     public int getHoras() {
@@ -67,7 +72,10 @@ public class Fecha {
     }
 
     public void setHoras(int horas) {
-        this.horas = horas;
+        String resultado = validarFecha(this.dia, (this.mes-1), this.anio, horas, this.minutos, this.segundos);
+        if (resultado == "") {
+            this.horas = horas;
+        }
     }
 
     public int getMinutos() {
@@ -75,7 +83,10 @@ public class Fecha {
     }
 
     public void setMinutos(int minutos) {
-        this.minutos = minutos;
+        String resultado = validarFecha(this.dia, (this.mes-1), this.anio, this.horas, minutos, this.segundos);
+        if (resultado == "") {
+            this.minutos = minutos;
+        }
     }
 
     public int getSegundos() {
@@ -83,7 +94,10 @@ public class Fecha {
     }
 
     public void setSegundos(int segundos) {
-        this.segundos = segundos;
+        String resultado = validarFecha(dia, (this.mes-1), this.anio, this.horas, this.minutos, segundos);
+        if (resultado == "") {
+            this.segundos = segundos;
+        }
     }
 
     public Fecha agregarDia() {
